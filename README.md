@@ -1,58 +1,91 @@
-# Ender-5-MKS-Eagle-Klipper-Pi-Zero-2W
-Este repositório documenta o processo completo de atualização da Creality Ender 5, substituindo a eletrônica original pela placa MKS Eagle e utilizando o firmware Klipper gerenciado por um Raspberry Pi Zero 2W.
+<div align="center">
+  <h1>🚀 Ender-5 Modernization Project</h1>
+  <h3>MKS Eagle + Klipper + Pi Zero 2W</h3>
+  
+  <p>
+    <img src="https://img.shields.io/badge/Printer-Ender--5-orange?style=for-the-badge" alt="Ender 5">
+    <img src="https://img.shields.io/badge/Firmware-Klipper-blue?style=for-the-badge" alt="Klipper">
+    <img src="https://img.shields.io/badge/Slicer-PrusaSlicer-brightgreen?style=for-the-badge" alt="PrusaSlicer">
+  </p>
+</div>
 
-🛠️ Hardware Utilizado
-  *Impressora: Creality Ender 5 (Cinemática Cartesiana).
+---
 
-  *Placa-Mãe: MKS Eagle V1.0 (MCU STM32F407).
+## 📝 Sobre o Projeto
+Este repositório documenta o processo completo de atualização da **Creality Ender 5**, substituindo a eletrônica original pela placa **MKS Eagle** e utilizando o firmware **Klipper** gerenciado por um **Raspberry Pi Zero 2W**.
 
-  *Host: Raspberry Pi Zero 2W (Conectado via USB).
+---
 
-  *Firmware: Klipper.
+## 🛠️ Hardware Utilizado
 
-  *Drivers de Motor: TMC2209 em modo UART.
+<table align="center">
+  <tr>
+    <td width="50%">
+      <ul>
+        <li><b>Impressora:</b> Creality Ender 5 (Cartesiana)</li>
+        <li><b>Placa-Mãe:</b> MKS Eagle V1.0 (MCU STM32F407) [cite: 1, 2]</li>
+        <li><b>Host:</b> Raspberry Pi Zero 2W (USB)</li>
+        <li><b>Drivers:</b> TMC2209 em modo UART </li>
+      </ul>
+    </td>
+    <td width="50%">
+      <ul>
+        <li><b>Nivelamento:</b> Creality CR-Touch </li>
+        <li><b>Resfriamento:</b> 2x Fans 24V (PB04010MS4) </li>
+        <li><b>Alimentação Pi:</b> Fonte Externa (Futuro: Conversor Buck)</li>
+        <li><b>Firmware:</b> Klipper [cite: 1, 2]</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-  *Nivelamento: Creality CR-Touch.
+---
 
-  *Resfriamento da Peça: 2x Fans 24V (Modelo PB04010MS4) em portas independentes.
+## 💠 Suporte de Hotend Customizado
+Desenvolvi um modelo 3D exclusivo para acomodar o BL-Touch/CR-Touch e o sistema de refrigeração duplo.
 
-  *Alimentação do Pi: Temporariamente via fonte externa (Planejado: Upgrade para Conversor Buck 24V -> 5V).
+<div align="center">
+  <img src="NOME_DA_SUA_IMAGEM_RENDER.png" width="400" alt="Amart3D Shroud">
+  <br>
+  <a href="https://cults3d.com/en/3d-model/various/ender-5-dual-flow-shroud-mks-eagle-bl-touch-optimized-amartmanufatura-ed68">
+    <img src="https://img.shields.io/badge/Download_no-Cults3D-red?style=for-the-badge&logo=cults3d" alt="Download Cults3D">
+  </a>
+</div>
 
-📂 Estrutura do Projeto
-  /klipper: Contém o arquivo printer.cfg otimizado.
+* **Destaque:** Fluxo de ar otimizado para evitar *heatcreep* e melhorar saliências (*overhangs*).
+* [cite_start]**Offsets do Sensor:** `x_offset: -44.0`, `y_offset: -15.0`.
 
-  /firmware: Instruções de compilação e o arquivo klipper.bin.
+---
 
-  /3D_Models: Link e arquivos para o suporte do Hotend (Fans + BL-Touch).
+## 🔧 Configuração do Firmware (MKS Eagle)
+[cite_start]Configurações utilizadas no `make menuconfig` para a placa MKS Eagle[cite: 1, 3]:
 
-  /slicer: Perfis do PrusaSlicer 2.9.4.
+* [cite_start]**Arquitetura:** STMicroelectronics STM32 [cite: 3]
+* [cite_start]**Modelo:** STM32F407 [cite: 3]
+* [cite_start]**Bootloader:** 48 KiB bootloader [cite: 3]
+* [cite_start]**Interface:** USB (PA11/PA12) [cite: 3]
 
-🔧 Configuração do Firmware (MKS Eagle)
-Para compilar o firmware para esta placa, utilize as seguintes definições no make menuconfig:
+---
 
-  *Micro-controller Architecture: STMicroelectronics STM32
+## ⚙️ Slicer & G-Code
+Migração para o **PrusaSlicer 2.9.4**, otimizando a compatibilidade com Klipper.
 
-  *Processor model: STM32F407
+* **Melhorias:**
+    * Eliminação do erro de `exclude_object` fantasma do Creality Print.
+    * Macros de `START_GCODE` para aquecimento inteligente.
+    * Redução de *stringing* (encordoamento) em sistemas Bowden.
+* [cite_start]**Ajustes de Fluxo:** `max_extrude_cross_section: 6.0` para segurança em purgas densas.
 
-  *Bootloader offset: 48KiB bootloader
+---
 
-  *Communication interface: USB (on PA11/PA12)
+## 📂 Estrutura do Projeto
+* [cite_start]`📂 /klipper`: Arquivo `printer.cfg` otimizado.
+* [cite_start]`📂 /firmware`: Instruções e arquivo `klipper.bin`.
+* `📂 /3D_Models`: Arquivos para o suporte do Hotend.
+* `📂 /slicer`: Perfis do PrusaSlicer.
 
-💠 Suporte de Hotend Customizado
-Desenvolvi um modelo 3D exclusivo para acomodar o BL-Touch e o sistema de resfriamento duplo (2x Fans 24V).
-<img width="1366" height="559" alt="TampaEnder5-1" src="https://github.com/user-attachments/assets/037cc329-a845-4dab-beff-a9e643ff02dc" />
-<img width="1366" height="559" alt="TampaEnder5-3" src="https://github.com/user-attachments/assets/4d68d3e0-e740-4639-8253-5b7439166e9d" />
-<img width="1366" height="559" alt="TampaEnder5-2" src="https://github.com/user-attachments/assets/e04e563c-76fa-4e11-89ab-0b11b39e008d" />
-<img width="1366" height="559" alt="TampaEnder5-4" src="https://github.com/user-attachments/assets/9bc21d83-392d-4460-ba70-300e0e789939" />
+---
 
-Download: 
-https://cults3d.com/en/3d-model/various/ender-5-dual-flow-shroud-mks-eagle-bl-touch-optimized-amartmanufatura-ed68
-
-  Destaque: Fluxo de ar otimizado para evitar heatcreep e melhorar balanços (overhangs).
-
-⚙️ Slicer & G-Code
-  Migração do Creality Print para o PrusaSlicer 2.9.4, eliminando erros de compatibilidade (como o exclude_object fantasma).
-
-  Inclusão de macros de START_GCODE para aquecimento inteligente e limpeza de bico.
-
-  Perfis de filamento ajustados para redução de stringing em sistemas Bowden.
+<div align="center">
+  <sub>Projeto desenvolvido por AmartManufatura.</sub>
+</div>
