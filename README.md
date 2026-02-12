@@ -74,13 +74,13 @@ Migração para o **PrusaSlicer 2.9.4**, otimizando a compatibilidade com Klippe
     * Eliminação do erro de `exclude_object` fantasma do Creality Print.
     * Macros de `START_GCODE` para aquecimento inteligente.
     * Redução de *stringing* (encordoamento) em sistemas Bowden.
-* [cite_start]**Ajustes de Fluxo:** `max_extrude_cross_section: 6.0` para segurança em purgas densas.
+* **Ajustes de Fluxo:** `max_extrude_cross_section: 6.0` para segurança em purgas densas.
 
 ---
 
 ## 📂 Estrutura do Projeto
-* [cite_start]`📂 /klipper`: Arquivo `printer.cfg` otimizado.
-* [cite_start]`📂 /firmware`: Instruções e arquivo `klipper.bin`.
+* `📂 /klipper`: Arquivo `printer.cfg` otimizado.
+* `📂 /firmware`: Instruções e arquivo `klipper.bin`.
 * `📂 /3D_Models`: Arquivos para o suporte do Hotend.
 * `📂 /slicer`: Perfis do PrusaSlicer.
 
