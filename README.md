@@ -71,10 +71,9 @@ Desenvolvi um modelo 3D exclusivo para acomodar o BL-Touch/CR-Touch e o sistema 
 Migração para o **PrusaSlicer 2.9.4**, otimizando a compatibilidade com Klipper.
 
 * **Melhorias:**
-    * Eliminação do erro de `exclude_object` fantasma do Creality Print.
     * Macros de `START_GCODE` para aquecimento inteligente.
     * Redução de *stringing* (encordoamento) em sistemas Bowden.
-* **Ajustes de Fluxo:** `max_extrude_cross_section: 6.0` para segurança em purgas densas.
+    * **Ajustes de Fluxo:** `max_extrude_cross_section: 6.0` para segurança em purgas densas.
 
 ---
 
