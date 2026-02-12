@@ -45,7 +45,7 @@ Este repositório documenta o processo completo de atualização da **Creality E
 Desenvolvi um modelo 3D exclusivo para acomodar o BL-Touch/CR-Touch e o sistema de refrigeração duplo.
 
 <div align="center">
-  <img src="NOME_DA_SUA_IMAGEM_RENDER.png" width="400" alt="Amart3D Shroud">
+  <img src="https://fbi.cults3d.com/uploaders/14730752/illustration-file/bb92b031-b326-4e9c-ae47-717bdecdcb29/TampaEnder5-1.png" width="400" alt="Amart3D Shroud">
   <br>
   <a href="https://cults3d.com/:4028046">
     <img src="https://img.shields.io/badge/Download_no-Cults3D-red?style=for-the-badge&logo=cults3d" alt="Download Cults3D">
