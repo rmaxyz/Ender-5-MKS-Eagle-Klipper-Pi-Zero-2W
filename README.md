@@ -58,12 +58,12 @@ Desenvolvi um modelo 3D exclusivo para acomodar o BL-Touch/CR-Touch e o sistema 
 ---
 
 ## 🔧 Configuração do Firmware (MKS Eagle)
-[cite_start]Configurações utilizadas no `make menuconfig` para a placa MKS Eagle[cite: 1, 3]:
+Configurações utilizadas no `make menuconfig` para a placa MKS Eagle[cite: 1, 3]:
 
-* [cite_start]**Arquitetura:** STMicroelectronics STM32 [cite: 3]
-* [cite_start]**Modelo:** STM32F407 [cite: 3]
-* [cite_start]**Bootloader:** 48 KiB bootloader [cite: 3]
-* [cite_start]**Interface:** USB (PA11/PA12) [cite: 3]
+* **Arquitetura:** STMicroelectronics STM32 [cite: 3]
+* **Modelo:** STM32F407 [cite: 3]
+* **Bootloader:** 48 KiB bootloader [cite: 3]
+* **Interface:** USB (PA11/PA12) [cite: 3]
 
 ---
 
