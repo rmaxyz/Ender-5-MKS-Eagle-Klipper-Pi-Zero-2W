@@ -47,13 +47,13 @@ Desenvolvi um modelo 3D exclusivo para acomodar o BL-Touch/CR-Touch e o sistema 
 <div align="center">
   <img src="NOME_DA_SUA_IMAGEM_RENDER.png" width="400" alt="Amart3D Shroud">
   <br>
-  <a href="https://cults3d.com/en/3d-model/various/ender-5-dual-flow-shroud-mks-eagle-bl-touch-optimized-amartmanufatura-ed68">
+  <a href="[https://cults3d.com/en/3d-model/various/ender-5-dual-flow-shroud-mks-eagle-bl-touch-optimized-amartmanufatura-ed68](https://cults3d.com/:4028046)">
     <img src="https://img.shields.io/badge/Download_no-Cults3D-red?style=for-the-badge&logo=cults3d" alt="Download Cults3D">
   </a>
 </div>
 
 * **Destaque:** Fluxo de ar otimizado para evitar *heatcreep* e melhorar saliências (*overhangs*).
-* [cite_start]**Offsets do Sensor:** `x_offset: -44.0`, `y_offset: -15.0`.
+
 
 ---
 
